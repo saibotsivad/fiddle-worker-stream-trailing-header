@@ -1,24 +1,25 @@
 {
-  "name": "TODO_NAME",
+  "name": "fiddle-worker-stream-trailing-header",
   "private": true,
   "version": "0.0.0",
-  "description": "TODO_DESCRIPTION",
+  "description": "Demo of trailing headers inside Cloudflare Workers.",
   "main": "index.js",
   "scripts": {
-    "deploy": "source configuration.sh && wrangler publish"
+    "deploy": "source configuration.sh && wrangler publish",
+    "log": "source configuration.sh && wrangler tail -c wrangler.toml"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TODO_ORG/TODO_NAME.git"
+    "url": "git+https://github.com/saibotsivad/fiddle-worker-stream-trailing-header.git"
   },
   "contributors": [
     "Tobias Davis <tobias@davistobias.com> (https://davistobias.com/)"
   ],
   "bugs": {
-    "url": "https://github.com/TODO_ORG/TODO_NAME/issues"
+    "url": "https://github.com/saibotsivad/fiddle-worker-stream-trailing-header/issues"
   },
-  "homepage": "https://github.com/TODO_ORG/TODO_NAME#readme",
+  "homepage": "https://github.com/saibotsivad/fiddle-worker-stream-trailing-header#readme",
   "dependencies": {
-    "@cloudflare/wrangler": "^1.19.0"
+    "wrangler": "^2.1.12"
   }
 }

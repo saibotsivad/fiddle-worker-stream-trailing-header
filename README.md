@@ -1,15 +1,12 @@
-# TEMPLATE
+# Trailing Headers
 
-This is a template for making and deploying a really simple Cloudflare Worker.
+I had an idea that I could add some spicy functionality to an API if I could have the API send "headers" after all the body data was sent.
 
-There's no build step, so this is for things like redirects, simple proxies, etc.
+Dubious idea, but apparently in HTTP/3 you can have "trailing header frames" https://http3-explained.haxx.se/en/h3/h3-streams#http-response
 
-The deployment step is not automatic in this template, since this is often used in
-private repos which don't have free workflow stuff. (Bitbucket does, fyi.)
+After I found that, I was able to track down a similar idea in HTTP/1.1 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Trailer
 
-## Project Setup
-
-You'll need to update the `wrangler.toml` file with your own properties from Cloudflare.
+With that new-found knowledge, I wanted to make a little demo so I could see how it works in browsers and other CLI tools, e.g. `cURL`, and in particular I wanted to see how I could make it work in a Cloudflare Worker.
 
 ## Deploy
 
@@ -29,7 +26,7 @@ Finally, simply run `npm run deploy`
 For a subdomain, you'll need to add an `AAAA` DNS record pointing to `100::` (the
 reserved IPv6 discard prefix).
 
-That comes from the [cloudflare docs](https://developers.cloudflare.com/workers/platform/routes):
+That comes from the [Cloudflare docs](https://developers.cloudflare.com/workers/platform/routes):
 
 > Subdomains must have a DNS Record
 >

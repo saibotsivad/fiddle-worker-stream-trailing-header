@@ -8,6 +8,10 @@ After I found that, I was able to track down a similar idea in HTTP/1.1 https://
 
 With that new-found knowledge, I wanted to make a little demo so I could see how it works in browsers and other CLI tools, e.g. `cURL`, and in particular I wanted to see how I could make it work in a Cloudflare Worker.
 
+## Summary
+
+**👎🚨⚠️ As far as I can tell Cloudflare is dropping the `Trailer` header, so this won't work.**
+
 ## Deploy
 
 Copy the configuration example to your own file:
